@@ -43,8 +43,13 @@ class User extends Authenticatable
     ];
 
 
+    // public function schedules()
+    // {
+    //     return $this->hasMany(Schedule::class);
+    // }
+
     public function schedules()
     {
-        return $this->hasMany(Schedule::class);
+        return $this->belongsToMany(Schedule::class, 'schedule_users');
     }
 }

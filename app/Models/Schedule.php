@@ -9,8 +9,21 @@ class Schedule extends Model
 {
     use HasFactory;
 
-    public function user()
+    protected $fillable = [
+        'user_id',
+        'title',
+        'start_date',
+        'end_date',
+        '_token',
+    ];
+
+    // public function user()
+    // {
+    //     return $this->belongsTo(User::class);
+    // }
+
+    public function users()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class, 'schedule_users');
     }
 }
