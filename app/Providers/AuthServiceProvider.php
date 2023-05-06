@@ -14,6 +14,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         //
+        Schedule::class => SchedulePolicy::class,
     ];
 
     /**

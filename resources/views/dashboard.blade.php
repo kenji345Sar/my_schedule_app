@@ -4,6 +4,14 @@
     </x-slot>
 
     <div class="container mt-5">
+        <div class="d-flex justify-content-end">
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="btn btn-link text-decoration-none">
+                    {{ __('Logout') }}
+                </button>
+            </form>
+        </div>
         <h1 class="mb-4">Dashboard</h1>
         <p>Welcome, {{ Auth::user()->name }}!</p>
         <a href="{{ route('schedules.create') }}" class="btn btn-primary mb-3">Add Schedule</a>

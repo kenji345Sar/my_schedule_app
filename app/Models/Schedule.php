@@ -17,13 +17,18 @@ class Schedule extends Model
         '_token',
     ];
 
-    // public function user()
-    // {
-    //     return $this->belongsTo(User::class);
-    // }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function users()
     {
         return $this->belongsToMany(User::class, 'schedule_users');
+    }
+
+    public function scheduleItems()
+    {
+        return $this->hasMany(ScheduleItem::class);
     }
 }

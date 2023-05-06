@@ -27,6 +27,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/schedule_items/{schedule_item}', [ScheduleItemController::class, 'destroy'])->name('schedule_items.destroy');
 });
 
+Route::post('/schedules/{schedule}/add_user', [ScheduleController::class, 'addUser'])->name('schedules.addUser');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
